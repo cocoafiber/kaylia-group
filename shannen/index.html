@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shannen-Kaylia Henry — Sustainability Strategist & Ecosystem Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f7f3ee;
+      --warm-white: #faf8f5;
+      --parchment: #ede8e0;
+      --taupe: #c4b8a8;
+      --sand: #d4c9b8;
+      --terracotta: #b86a4a;
+      --terracotta-light: #d4896a;
+      --brown-deep: #3a2a1e;
+      --brown-mid: #6a4a36;
+      --brown-light: #8a6a56;
+      --text: #2a1e16;
+      --text-muted: #7a6a5e;
+      --white: #ffffff;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--warm-white); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--brown-deep);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 64px;
+    }
+    .nav-back {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: rgba(255,255,255,0.6);
+      font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+      font-weight: 300; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--taupe); }
+    .nav-back::before { content: '←'; font-size: 16px; }
+    .nav-name {
+      font-family: var(--font-display); font-size: 18px; font-weight: 400;
+      color: var(--white); letter-spacing: 0.04em;
+      position: absolute; left: 50%; transform: translateX(-50%);
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.55); text-decoration: none;
+      font-size: 12px; font-weight: 300; letter-spacing: 0.1em;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--taupe); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; padding-top: 64px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--cream);
+    }
+    .hero-image-side {
+      position: relative; overflow: hidden; min-height: 100vh;
+    }
+    /* DROP YOUR PHOTO HERE:
+       Replace the gradient div below with:
+       <img src="../images/shannen.jpg" alt="Shannen-Kaylia Henry" style="width:100%; height:100%; object-fit:cover; object-position: center top;" />
+    */
+    .hero-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, #c4a888 0%, #a88868 30%, #7a6048 60%, #4a3828 100%);
+      position: relative;
+    }
+    .hero-photo-placeholder::after {
+      content: 'Your photo here'; position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); font-family: var(--font-body); font-weight: 300;
+    }
+    .hero-text-side {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 100px 72px 80px 64px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 28px; font-weight: 400;
+    }
+    .hero-name {
+      font-family: var(--font-display); font-size: clamp(48px, 5vw, 72px);
+      font-weight: 300; color: var(--text); line-height: 1.0;
+      margin-bottom: 28px; letter-spacing: 0.01em;
+    }
+    .hero-name em { font-style: italic; color: var(--brown-mid); }
+    .hero-tagline {
+      font-family: var(--font-display); font-style: italic;
+      font-size: clamp(18px, 2vw, 24px); color: var(--text-muted);
+      font-weight: 300; line-height: 1.6; margin-bottom: 36px;
+    }
+    .hero-desc {
+      font-size: 15px; color: var(--text-muted); font-weight: 300;
+      line-height: 1.85; margin-bottom: 48px; max-width: 420px;
+    }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 36px; background: var(--terracotta); color: var(--white);
+      text-decoration: none; font-size: 12px; font-weight: 400;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn-primary:hover { background: var(--brown-mid); transform: translateY(-1px); }
+    .btn-secondary {
+      padding: 14px 36px; border: 1px solid var(--taupe);
+      color: var(--text); text-decoration: none; font-size: 12px;
+      font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .btn-secondary:hover { border-color: var(--brown-light); background: var(--parchment); }
+
+    /* ── QUICK STATS ── */
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 64px;
+      padding-top: 40px; border-top: 1px solid var(--sand);
+    }
+    .stat-item { display: flex; flex-direction: column; gap: 6px; }
+    .stat-num {
+      font-family: var(--font-display); font-size: 36px; font-weight: 300;
+      color: var(--terracotta); line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); font-weight: 300;
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    .section-label {
+      font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 16px;
+    }
+    .section-heading {
+      font-family: var(--font-display); font-size: clamp(36px, 4vw, 52px);
+      font-weight: 400; color: var(--text); line-height: 1.1; margin-bottom: 20px;
+    }
+    .section-subtext {
+      font-size: 15px; line-height: 1.85; color: var(--text-muted);
+      font-weight: 300; max-width: 520px;
+    }
+
+    /* ── STORY ── */
+    #story { padding: 140px 48px; background: var(--warm-white); }
+    .story-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 100px; align-items: start; }
+    .story-left { position: sticky; top: 100px; }
+    .story-right { display: flex; flex-direction: column; gap: 40px; }
+    .story-chapter {
+      padding-bottom: 40px; border-bottom: 1px solid var(--parchment);
+    }
+    .story-chapter:last-child { border-bottom: none; padding-bottom: 0; }
+    .chapter-location {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 14px; font-weight: 400;
+    }
+    .chapter-location::before { content: ''; width: 24px; height: 1px; background: var(--terracotta); }
+    .chapter-title {
+      font-family: var(--font-display); font-size: 28px; font-weight: 400;
+      color: var(--text); margin-bottom: 16px; line-height: 1.2;
+    }
+    .chapter-body {
+      font-size: 15px; line-height: 1.9; color: var(--text-muted); font-weight: 300;
+    }
+
+    /* ── SPEAKING ── */
+    #speaking { padding: 140px 48px; background: var(--parchment); }
+    .speaking-inner { max-width: 1200px; margin: 0 auto; }
+    .speaking-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 80px; }
+    .speaking-venues-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .venue-card {
+      background: var(--warm-white); padding: 40px 36px;
+      transition: background 0.3s;
+    }
+    .venue-card:hover { background: var(--brown-deep); }
+    .venue-card:hover .venue-card-title,
+    .venue-card:hover .venue-card-body { color: var(--white); }
+    .venue-card:hover .venue-card-tag { color: var(--taupe); }
+    .venue-card-tag {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--terracotta); margin-bottom: 16px; display: block;
+      transition: color 0.3s;
+    }
+    .venue-card-title {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      color: var(--text); margin-bottom: 12px; line-height: 1.2;
+      transition: color 0.3s;
+    }
+    .venue-card-body {
+      font-size: 14px; line-height: 1.75; color: var(--text-muted);
+      font-weight: 300; transition: color 0.3s;
+    }
+    .speaking-topics { margin-top: 80px; padding-top: 60px; border-top: 1px solid var(--sand); }
+    .speaking-topics h3 {
+      font-family: var(--font-display); font-size: 28px; font-weight: 400;
+      color: var(--text); margin-bottom: 32px;
+    }
+    .topics-list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .topic-tag {
+      padding: 10px 22px; border: 1px solid var(--taupe);
+      font-size: 13px; color: var(--text-muted); font-weight: 300;
+      letter-spacing: 0.06em; transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .topic-tag:hover { background: var(--terracotta); border-color: var(--terracotta); color: var(--white); }
+
+    /* ── PROJECTS ── */
+    #projects { padding: 140px 48px; background: var(--warm-white); }
+    .projects-inner { max-width: 1200px; margin: 0 auto; }
+    .projects-header { margin-bottom: 72px; }
+    .projects-list { display: flex; flex-direction: column; gap: 2px; }
+    .project-row {
+      display: grid; grid-template-columns: 80px 1fr 1fr 160px;
+      align-items: center; gap: 40px;
+      padding: 32px 40px; background: var(--cream);
+      text-decoration: none; transition: background 0.25s;
+      cursor: pointer;
+    }
+    .project-row:hover { background: var(--brown-deep); }
+    .project-row:hover .proj-num,
+    .project-row:hover .proj-name,
+    .project-row:hover .proj-desc,
+    .project-row:hover .proj-tag { color: var(--white); }
+    .project-row:hover .proj-tag { color: var(--taupe); }
+    .proj-num {
+      font-family: var(--font-display); font-size: 18px;
+      color: var(--taupe); font-weight: 300; transition: color 0.25s;
+    }
+    .proj-name {
+      font-family: var(--font-display); font-size: 26px; font-weight: 400;
+      color: var(--text); line-height: 1.2; transition: color 0.25s;
+    }
+    .proj-desc {
+      font-size: 14px; color: var(--text-muted); font-weight: 300;
+      line-height: 1.6; transition: color 0.25s;
+    }
+    .proj-tag {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--terracotta); text-align: right; transition: color 0.25s;
+    }
+
+    /* ── SDG COMMITMENT ── */
+    #sdg { padding: 120px 48px; background: var(--brown-deep); }
+    .sdg-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .sdg-text .section-label { color: rgba(255,255,255,0.4); }
+    .sdg-text .section-heading { color: var(--white); }
+    .sdg-text .section-subtext { color: rgba(255,255,255,0.55); margin-bottom: 40px; }
+    .sdg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+    .sdg-tile {
+      aspect-ratio: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 12px 8px;
+      text-align: center; font-size: 9px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; color: white; line-height: 1.3;
+    }
+    .sdg-1 { background: #e5243b; } .sdg-5 { background: #ff3a21; }
+    .sdg-6 { background: #26bde2; } .sdg-11 { background: #fd9d24; }
+    .sdg-12 { background: #bf8b2e; } .sdg-16 { background: #00689d; }
+    .sdg-17 { background: #19486a; }
+
+    /* ── WORK WITH ME ── */
+    #work {
+      padding: 140px 48px; background: var(--cream);
+      text-align: center;
+    }
+    .work-inner { max-width: 700px; margin: 0 auto; }
+    .work-inner .section-label { margin-bottom: 24px; }
+    .work-heading {
+      font-family: var(--font-display); font-size: clamp(44px, 6vw, 76px);
+      font-weight: 300; color: var(--text); line-height: 1.1; margin-bottom: 28px;
+    }
+    .work-heading em { font-style: italic; color: var(--terracotta); }
+    .work-body {
+      font-size: 16px; color: var(--text-muted); font-weight: 300;
+      line-height: 1.85; margin-bottom: 56px;
+    }
+    .work-options {
+      display: flex; gap: 16px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 48px;
+    }
+    .work-option {
+      padding: 12px 28px; border: 1px solid var(--taupe);
+      font-size: 13px; color: var(--text-muted); font-weight: 300;
+      letter-spacing: 0.08em; transition: all 0.2s;
+    }
+    .work-option:hover { background: var(--terracotta); border-color: var(--terracotta); color: white; }
+    .work-ctas { display: flex; gap: 14px; justify-content: center; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--brown-deep); padding: 100px 48px; }
+    .contact-title {
+      font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px);
+      font-weight: 400; color: var(--white); text-align: center; margin-bottom: 12px;
+    }
+    .contact-subtitle {
+      text-align: center; font-size: 15px; color: rgba(255,255,255,0.45);
+      font-weight: 300; margin-bottom: 64px;
+    }
+    .contact-form { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; }
+    .form-group { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .form-group:nth-child(odd) { padding-right: 40px; border-right: 1px solid rgba(255,255,255,0.07); }
+    .form-group:nth-child(even) { padding-left: 40px; }
+    .form-group.full { grid-column: 1/-1; padding-left: 0; padding-right: 0; border-right: none; }
+    .form-group label { display: block; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 10px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; background: transparent; border: none; outline: none;
+      color: var(--white); font-family: var(--font-body); font-size: 15px; font-weight: 300; padding: 0; resize: none;
+    }
+    .form-group select option { background: var(--brown-deep); }
+    .form-group textarea { height: 100px; }
+    .form-submit { grid-column: 2; display: flex; justify-content: flex-end; padding-top: 32px; }
+    .btn-send { background: var(--terracotta); color: var(--white); border: none; padding: 16px 48px; font-family: var(--font-body); font-size: 13px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.25s; }
+    .btn-send:hover { background: var(--brown-mid); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--brown-deep); border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 48px; display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .footer-left { font-family: var(--font-display); font-size: 20px; font-weight: 400; color: rgba(255,255,255,0.7); }
+    .footer-left span { font-size: 13px; font-family: var(--font-body); font-weight: 300; display: block; color: rgba(255,255,255,0.35); letter-spacing: 0.06em; margin-top: 6px; }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 300; letter-spacing: 0.06em; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--taupe); }
+    .footer-social { display: flex; gap: 12px; }
+    .social-link { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: border-color 0.2s, color 0.2s; }
+    .social-link:hover { border-color: var(--taupe); color: var(--taupe); }
+    .footer-copy { width: 100%; font-size: 12px; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-text-side > * { animation: fadeUp 0.9s ease both; }
+    .hero-text-side > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-text-side > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-text-side > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-text-side > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-text-side > *:nth-child(5) { animation-delay: 0.5s; }
+    .hero-text-side > *:nth-child(6) { animation-delay: 0.6s; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; } .reveal-delay-2 { transition-delay: 0.2s; } .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-image-side { min-height: 60vw; }
+      .hero-text-side { padding: 60px 24px; }
+      .hero-stats { gap: 32px; }
+      #story, #speaking, #projects, #sdg, #work, #contact { padding-left: 24px; padding-right: 24px; }
+      .story-inner { grid-template-columns: 1fr; gap: 48px; }
+      .story-left { position: static; }
+      .speaking-header { grid-template-columns: 1fr; gap: 40px; }
+      .speaking-venues-grid { grid-template-columns: 1fr; }
+      .project-row { grid-template-columns: 48px 1fr; gap: 20px; padding: 24px; }
+      .proj-desc, .proj-tag { display: none; }
+      .sdg-inner { grid-template-columns: 1fr; gap: 60px; }
+      .contact-form { grid-template-columns: 1fr; }
+      .form-group:nth-child(odd) { padding-right: 0; border-right: none; }
+      .form-group:nth-child(even) { padding-left: 0; }
+      .form-submit { grid-column: 1; }
+      footer { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-back" href="../">The Kaylia Group</a>
+    <span class="nav-name">Shannen-Kaylia Henry</span>
+    <ul class="nav-links">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#work">Work With Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-image-side">
+      <!-- REPLACE THIS DIV WITH YOUR PHOTO:
+           <img src="../images/shannen.jpg" alt="Shannen-Kaylia Henry"
+                style="width:100%; height:100%; object-fit:cover; object-position: center top;" />
+      -->
+      <div class="hero-photo-placeholder"></div>
+    </div>
+    <div class="hero-text-side">
+      <p class="hero-eyebrow">Founder · Strategist · Speaker</p>
+      <h1 class="hero-name">Shannen-<br><em>Kaylia</em><br>Henry</h1>
+      <p class="hero-tagline">Sustainability Strategist &amp;<br>Ecosystem Builder</p>
+      <p class="hero-desc">A native New Yorker who has lived on 4 continents, built ecosystems across fashion and sustainability, and spoken at the United Nations. Based in Biella, Italy — one of the world's most prestigious textile regions.</p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary">Work With Me</a>
+        <a href="#speaking" class="btn-secondary">Speaking</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">4</span>
+          <span class="stat-label">Continents lived</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">UN</span>
+          <span class="stat-label">Speaker</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Ecosystems built</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="story-inner">
+      <div class="story-left reveal">
+        <p class="section-label">My Story</p>
+        <h2 class="section-heading">From biology<br>to Biella</h2>
+        <p class="section-subtext">A journey across continents, disciplines, and industries — all converging on one mission: a more sustainable creative world.</p>
+      </div>
+      <div class="story-right">
+        <div class="story-chapter reveal">
+          <span class="chapter-location">Napa Valley, California</span>
+          <h3 class="chapter-title">Where it began</h3>
+          <p class="chapter-body">Shannen began her academic journey as a biologist in Napa Valley, studying the degradation of the redwood forest. This work instilled a profound appreciation for nature's resilience — and a lifelong commitment to protecting it.</p>
+        </div>
+        <div class="story-chapter reveal">
+          <span class="chapter-location">Paris, France</span>
+          <h3 class="chapter-title">Luxury meets responsibility</h3>
+          <p class="chapter-body">For graduate school, she moved to Paris and immersed herself in the heart of luxury fashion — studying the intricate balance between high-end design and environmental responsibility. It was here she discovered that sustainability and beauty are not opposites.</p>
+        </div>
+        <div class="story-chapter reveal">
+          <span class="chapter-location">Southern India</span>
+          <h3 class="chapter-title">The turning point</h3>
+          <p class="chapter-body">To conclude her graduate studies, she ventured to the textile districts of Southern India, where she witnessed firsthand the devastating effects of the pollutant fashion industry on both people and the environment. India was the transformative moment where she committed her professional life to sustainable development.</p>
+        </div>
+        <div class="story-chapter reveal">
+          <span class="chapter-location">Biella, Italy · Now</span>
+          <h3 class="chapter-title">Building the ecosystem</h3>
+          <p class="chapter-body">Now residing in Biella — one of the world's most prestigious textile manufacturing regions — Shannen combines her scientific background in environmental science with expertise in luxury fashion and deep appreciation for cultural heritage. She leads the Kaylia Group, an ecosystem dedicated to decarbonizing and decentralizing the design industry's value chains. Her Grenadian ancestry inspired her to establish the CSDFG, empowering local women artisans by bridging traditional craftsmanship and modern sustainability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section id="speaking">
+    <div class="speaking-inner">
+      <div class="speaking-header">
+        <div class="reveal">
+          <p class="section-label">Speaking</p>
+          <h2 class="section-heading">A voice for sustainable futures</h2>
+        </div>
+        <div class="reveal">
+          <p class="section-subtext">Shannen-Kaylia speaks at the intersection of sustainability, fashion, cultural heritage, and innovation. From the United Nations to universities to global industry conferences — she brings firsthand expertise and a global perspective.</p>
+          <br /><br />
+          <a href="#contact" class="btn-primary">Book a Speaking Engagement</a>
+        </div>
+      </div>
+      <div class="speaking-venues-grid">
+        <div class="venue-card reveal">
+          <span class="venue-card-tag">International · Multilateral</span>
+          <h3 class="venue-card-title">United Nations</h3>
+          <p class="venue-card-body">Multiple speaking engagements at the United Nations on sustainable fashion, circular economy, and the role of creative industries in meeting global climate goals.</p>
+        </div>
+        <div class="venue-card reveal reveal-delay-1">
+          <span class="venue-card-tag">Academic · Education</span>
+          <h3 class="venue-card-title">Universities &amp; Institutions</h3>
+          <p class="venue-card-body">Guest lectures and keynotes at universities worldwide, speaking on sustainable fashion systems, ecosystem building, and the intersection of science and design.</p>
+        </div>
+        <div class="venue-card reveal reveal-delay-2">
+          <span class="venue-card-tag">Industry · Global Conferences</span>
+          <h3 class="venue-card-title">Global Conferences</h3>
+          <p class="venue-card-body">Keynotes and panels at major sustainability and fashion industry conferences across Europe, the Americas, and beyond — including the SDIH Summit in Biella, Italy.</p>
+        </div>
+      </div>
+      <div class="speaking-topics reveal">
+        <h3>Topics I speak on</h3>
+        <div class="topics-list">
+          <span class="topic-tag">Sustainable Fashion Systems</span>
+          <span class="topic-tag">Ecosystem Building</span>
+          <span class="topic-tag">Circular Economy</span>
+          <span class="topic-tag">Bio-based Materials</span>
+          <span class="topic-tag">Decarbonising Creative Industries</span>
+          <span class="topic-tag">Cultural Heritage &amp; Sustainability</span>
+          <span class="topic-tag">Women &amp; Artisan Empowerment</span>
+          <span class="topic-tag">Next-Generation Textiles</span>
+          <span class="topic-tag">Impact Entrepreneurship</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="projects-inner">
+      <div class="projects-header">
+        <p class="section-label reveal">Selected Work</p>
+        <h2 class="section-heading reveal">Things I've built</h2>
+        <p class="section-subtext reveal">A portfolio of ecosystems, events, programs, and initiatives — built across continents and creative sectors.</p>
+      </div>
+      <div class="projects-list">
+        <a href="#contact" class="project-row reveal">
+          <span class="proj-num">01</span>
+          <div>
+            <div class="proj-name">SDIH 2025 — Biella, Italy</div>
+          </div>
+          <p class="proj-desc">Annual sustainability summit on next-generation textile fibers. Convened designers, scientists, and producers from the global industry.</p>
+          <span class="proj-tag">Events · 2025</span>
+        </a>
+        <a href="#contact" class="project-row reveal">
+          <span class="proj-num">02</span>
+          <div>
+            <div class="proj-name">SDIH — Previous Editions</div>
+          </div>
+          <p class="proj-desc">Earlier editions of the Sustainable Design Impact Hub — a recurring platform for sustainable textile innovation and cross-sector collaboration.</p>
+          <span class="proj-tag">Events · Ongoing</span>
+        </a>
+        <a href="#contact" class="project-row reveal">
+          <span class="proj-num">03</span>
+          <div>
+            <div class="proj-name">CSDFG — Grenada</div>
+          </div>
+          <p class="proj-desc">Council on Sustainable Fashion and Design of Grenada. Empowering local women artisans by connecting Grenadian craft heritage with global sustainability networks and Italian artisan expertise.</p>
+          <span class="proj-tag">Non-Profit · Grenada</span>
+        </a>
+        <a href="#contact" class="project-row reveal">
+          <span class="proj-num">04</span>
+          <div>
+            <div class="proj-name">University Education Programs</div>
+          </div>
+          <p class="proj-desc">Curriculum development and educational partnerships at universities on sustainable fashion, circular economy, and responsible design practices.</p>
+          <span class="proj-tag">Education · Global</span>
+        </a>
+        <a href="#contact" class="project-row reveal">
+          <span class="proj-num">05</span>
+          <div>
+            <div class="proj-name">CocoaFiber™</div>
+          </div>
+          <p class="proj-desc">Pioneering bio-based material innovation — developing next-generation sustainable fibers from natural, regenerative sources.</p>
+          <span class="proj-tag">Innovation · Bio-materials</span>
+        </a>
+        <a href="#contact" class="project-row reveal">
+          <span class="proj-num">06</span>
+          <div>
+            <div class="proj-name">Kaylia Group Consulting</div>
+          </div>
+          <p class="proj-desc">Strategic sustainability consultancy engagements across fashion, lifestyle, and travel — helping brands transition to environmentally and socially sustainable practices.</p>
+          <span class="proj-tag">Consulting · Ongoing</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SDG -->
+  <section id="sdg">
+    <div class="sdg-inner">
+      <div class="sdg-text reveal">
+        <p class="section-label">Commitments</p>
+        <h2 class="section-heading">Guided by the Global Goals</h2>
+        <p class="section-subtext">Every project, partnership, and program is anchored in the UN Sustainable Development Goals — with a particular focus on gender equality, clean water, sustainable cities, and strong partnerships.</p>
+        <br /><br />
+        <a href="#contact" class="btn-primary" style="display:inline-block; margin-top:8px;">Let's build together</a>
+      </div>
+      <div class="sdg-grid reveal">
+        <div class="sdg-tile sdg-5">Gender<br>Equality</div>
+        <div class="sdg-tile sdg-6">Clean<br>Water</div>
+        <div class="sdg-tile sdg-1">No<br>Poverty</div>
+        <div class="sdg-tile sdg-16">Peace &amp;<br>Justice</div>
+        <div class="sdg-tile sdg-17">Partner-<br>ships</div>
+        <div class="sdg-tile sdg-11">Sustainable<br>Cities</div>
+        <div class="sdg-tile sdg-12">Responsible<br>Consumption</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK WITH ME -->
+  <section id="work">
+    <div class="work-inner">
+      <p class="section-label reveal">Work With Me</p>
+      <h2 class="work-heading reveal">Let's build<br><em>something</em><br>that matters</h2>
+      <p class="work-body reveal">If you've found your way here — from LinkedIn, a conference, or a recommendation — you're in the right place. Here's how we can work together:</p>
+      <div class="work-options reveal">
+        <span class="work-option">Strategic Consulting</span>
+        <span class="work-option">Event Production</span>
+        <span class="work-option">Speaking Engagement</span>
+        <span class="work-option">Long-term Partnership</span>
+        <span class="work-option">Education Program</span>
+      </div>
+      <div class="work-ctas reveal">
+        <a href="#contact" class="btn-primary">Send a Message</a>
+        <a href="https://www.linkedin.com/in/shannenkaylia" target="_blank" class="btn-secondary">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="contact-title reveal">Get in Touch</h2>
+    <p class="contact-subtitle reveal">Tell me what you're working on.</p>
+    <div class="contact-form reveal">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" />
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" />
+      </div>
+      <div class="form-group">
+        <label>Email *</label>
+        <input type="email" />
+      </div>
+      <div class="form-group">
+        <label>I'm reaching out about *</label>
+        <select>
+          <option value="">Select</option>
+          <option>Strategic Consulting</option>
+          <option>Event Production</option>
+          <option>Speaking Engagement</option>
+          <option>Partnership</option>
+          <option>Education Program</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label>Message *</label>
+        <textarea placeholder="Tell me about your project or invitation..."></textarea>
+      </div>
+      <div class="form-submit">
+        <button class="btn-send">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      Shannen-Kaylia Henry
+      <span>Founder, The Kaylia Group · Biella, Italy &amp; New York</span>
+    </div>
+    <div class="footer-links">
+      <a href="#story">Story</a>
+      <a href="#speaking">Speaking</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="../">The Kaylia Group →</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/shannenkaylia" target="_blank" class="social-link" aria-label="LinkedIn">in</a>
+      <a href="#" class="social-link" aria-label="Instagram">&#9679;</a>
+    </div>
+    <p class="footer-copy">© 2025 Shannen-Kaylia Henry · kayliagroup@gmail.com</p>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+      navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+    });
+  </script>
+</body>
+</html>
