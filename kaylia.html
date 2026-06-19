@@ -32,11 +32,58 @@
   gap: 72px 32px;
 }
 
+.kaylia-piece {
+  text-align: center;
+}
+
+.kaylia-piece > img,
+.piece-slider {
+  width: 100%;
+  aspect-ratio: 3 / 4.8;
+  background: #f7f4ef;
+}
+
 .kaylia-piece > img {
-    width: 100%;
-    aspect-ratio: 3 / 4.8;
-    object-fit: cover;
-    display: block;
+  object-fit: cover;
+  display: block;
+}
+
+.piece-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.piece-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.piece-slider img.active {
+  display: block;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border: none;
+  background: rgba(255,255,255,.78);
+  font-size: 34px;
+  width: 42px;
+  height: 42px;
+  line-height: 36px;
+  cursor: pointer;
+}
+
+.slide-btn.prev {
+  left: 12px;
+}
+
+.slide-btn.next {
+  right: 12px;
 }
 
 .kaylia-piece h3 {
@@ -58,46 +105,7 @@
     padding: 0 24px 100px;
   }
 }
-  .piece-slider {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4.8;
-  overflow: hidden;
-  background: #f7f4ef;
-}
-
-.piece-slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-.piece-slider img.active {
-  display: block;
-}
-.slide-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
-  border: none;
-  background: rgba(255,255,255,.75);
-  font-size: 32px;
-  width: 38px;
-  height: 38px;
-  cursor: pointer;
-}
-
-.slide-btn.prev {
-  left: 12px;
-}
-
-.slide-btn.next {
-  right: 12px;
-}
 </style>
-
 
 <main class="kaylia-page">
 
@@ -115,19 +123,19 @@
     </div>
 
     <div class="kaylia-piece">
-  <div class="piece-slider">
-    <button class="slide-btn prev">‹</button>
+      <div class="piece-slider">
+        <button class="slide-btn prev" type="button">‹</button>
 
-    <img class="active" src="images/anna-dragonfly2.jpg" alt="Anna Dragonfly front">
-<img src="images/anna-dragonfly21.jpg" alt="Anna Dragonfly detail">
-<img src="images/anna-dragonfly22.jpg" alt="Anna Dragonfly close up">
+        <img class="active" src="images/anna-dragonfly2.jpg" alt="Anna Dragonfly front">
+        <img src="images/anna-dragonfly21.jpg" alt="Anna Dragonfly detail">
+        <img src="images/anna-dragonfly22.jpg" alt="Anna Dragonfly close up">
 
-    <button class="slide-btn next">›</button>
-  </div>
+        <button class="slide-btn next" type="button">›</button>
+      </div>
 
-  <h3>Anna Dragonfly</h3>
-  <span>Look 01</span>
-</div>
+      <h3>Anna Dragonfly</h3>
+      <span>Look 02</span>
+    </div>
 
     <div class="kaylia-piece">
       <img src="images/anna-dragonfly1.png" alt="Anna Dragonfly">
@@ -146,23 +154,34 @@
       <h3>Monaco</h3>
       <span>Look 05</span>
     </div>
+
   </section>
 
 </main>
+
 <script>
-document.querySelectorAll('.piece-slider').forEach(slider => {
-  const images = slider.querySelectorAll('img');
-  const prev = slider.querySelector('.prev');
-  const next = slider.querySelector('.next');
-  let current = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.piece-slider').forEach(function (slider) {
+    const images = slider.querySelectorAll('img');
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+    let current = 0;
 
-  function showImage(index) {
-    images[current].classList.remove('active');
-    current = (index + images.length) % images.length;
-    images[current].classList.add('active');
-  }
+    if (!images.length || !prev || !next) return;
 
-  prev.addEventListener('click', () => showImage(current - 1));
-  next.addEventListener('click', () => showImage(current + 1));
+    function showImage(index) {
+      images[current].classList.remove('active');
+      current = (index + images.length) % images.length;
+      images[current].classList.add('active');
+    }
+
+    prev.addEventListener('click', function () {
+      showImage(current - 1);
+    });
+
+    next.addEventListener('click', function () {
+      showImage(current + 1);
+    });
+  });
 });
 </script>
