@@ -1,0 +1,99 @@
+<main class="kaylia-page">
+
+  <section class="kaylia-hero">
+    <h1>Kaylia</h1>
+    <p>Shannen-Kaylia's creative output.</p>
+  </section>
+
+  <section class="kaylia-gallery">
+
+    <div class="kaylia-piece">
+      <img src="images/fuchsia-soiree.jpg" alt="Fuchsia Soirée">
+      <h3>Fuchsia Soirée</h3>
+      <span>Look 01</span>
+    </div>
+
+    <div class="kaylia-piece">
+      <img src="images/azure-reverie.jpg" alt="Azure Reverie">
+      <h3>Azure Reverie</h3>
+      <span>Look 02</span>
+    </div>
+
+    <div class="kaylia-piece">
+      <img src="images/nocturne-elegance.jpg" alt="Nocturne Elegance">
+      <h3>Nocturne Elegance</h3>
+      <span>Look 03</span>
+    </div>
+
+    <div class="kaylia-piece">
+      <img src="images/blush-parisienne.jpg" alt="Blush Parisienne">
+      <h3>Blush Parisienne</h3>
+      <span>Look 04</span>
+    </div>
+
+  </section>
+
+</main>
+.kaylia-page {
+  background: #fff;
+  color: #111;
+}
+
+.kaylia-hero {
+  text-align: center;
+  padding: 140px 20px 90px;
+}
+
+.kaylia-hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 400;
+  margin: 0;
+}
+
+.kaylia-hero p {
+  margin-top: 24px;
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.kaylia-gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px 140px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px 32px;
+}
+
+.kaylia-piece {
+  text-align: center;
+}
+
+.kaylia-piece img {
+  width: 100%;
+  aspect-ratio: 3 / 4.8;
+  object-fit: cover;
+  display: block;
+}
+
+.kaylia-piece h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 24px 0 8px;
+}
+
+.kaylia-piece span {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .kaylia-gallery {
+    grid-template-columns: 1fr;
+    padding: 0 24px 100px;
+  }
+}
