@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,19 +94,122 @@
 
     /* ── OUR STORY ── */
     #about {
-      padding: 64px 48px;
+      padding: 120px 48px;
       background: #dce8ef;
       position: relative; overflow: hidden;
     }
     .story-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; text-align: center; }
     .story-inner h2 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 56px); font-weight: 400; margin-bottom: 36px; color: var(--text); }
-    .story-inner p { font-size: 16px; line-height: 1.85; color: var(--text); font-weight: 300; margin-bottom: 32px; }
+    .story-inner p { font-size: 16px; line-height: 1.85; color: var(--text); font-weight: 300; margin-bottom: 48px; }
     .btn-outline {
       display: inline-block; padding: 14px 40px; border: 1px solid var(--text);
       color: var(--text); text-decoration: none; font-size: 13px; font-weight: 400;
       letter-spacing: 0.1em; transition: background 0.25s, color 0.25s;
     }
     .btn-outline:hover { background: var(--text); color: var(--white); }
+
+
+    /* ── SUSTAINABLE PROPERTIES ── */
+    #properties {
+      padding: 120px 48px;
+      background: var(--off-white);
+    }
+    .properties-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 88px;
+      align-items: stretch;
+    }
+    .properties-visual {
+      min-height: 560px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(155deg, rgba(255,255,255,0.10), transparent 45%),
+        linear-gradient(145deg, #8ba8b8 0%, #58758a 42%, #243c4d 100%);
+    }
+    .properties-visual::before {
+      content: '';
+      position: absolute;
+      left: 11%;
+      bottom: 0;
+      width: 42%;
+      height: 72%;
+      border: 1px solid rgba(255,255,255,0.34);
+      border-bottom: none;
+    }
+    .properties-visual::after {
+      content: '';
+      position: absolute;
+      right: 10%;
+      top: 13%;
+      width: 48%;
+      height: 54%;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .properties-visual-label {
+      position: absolute;
+      left: 28px;
+      bottom: 26px;
+      color: rgba(255,255,255,0.78);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .properties-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px 0;
+    }
+    .properties-kicker {
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--sky-deep);
+      margin-bottom: 20px;
+    }
+    .properties-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 62px);
+      font-weight: 400;
+      line-height: 1.02;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+    .properties-copy {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-muted);
+      font-weight: 300;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    .properties-focus {
+      border-top: 1px solid rgba(26,26,26,0.14);
+      margin-bottom: 42px;
+    }
+    .property-focus-row {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      padding: 17px 0;
+      border-bottom: 1px solid rgba(26,26,26,0.14);
+    }
+    .property-focus-num {
+      font-family: var(--font-display);
+      color: var(--sky-deep);
+      font-size: 13px;
+    }
+    .property-focus-text {
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      font-weight: 300;
+    }
 
     /* ── PRESS ── */
     #press { padding: 80px 48px; background: var(--white); }
@@ -197,7 +301,9 @@
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
-      #group, #about, #press, #work-with-us, #affiliations, #contact { padding-left: 24px; padding-right: 24px; }
+      #group, #about, #properties, #press, #work-with-us, #affiliations, #contact { padding-left: 24px; padding-right: 24px; }
+      .properties-inner { grid-template-columns: 1fr; gap: 48px; }
+      .properties-visual { min-height: 420px; }
       .ecosystem-grid { grid-template-columns: 1fr 1fr; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .contact-form { grid-template-columns: 1fr; }
@@ -222,6 +328,7 @@
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#work-with-us">Services</a></li>
+      <li><a href="#properties">Properties</a></li>
       <li><a href="shannen/">Meet the Founder</a></li>
     </ul>
   </nav>
@@ -239,16 +346,16 @@
   <section id="group">
     <h2 class="section-title reveal">Kaylia Group Ecosystem</h2>
     <div class="ecosystem-grid reveal">
-      <a href="https://www.cocoafiber.com" target="_blank" class="eco-card eco-card-1">
+      <a href="#" class="eco-card eco-card-1">
         <span class="eco-label">CocoaFiber™</span>
       </a>
-      <a href="https://www.sustainabledesignimpacthub.com" target="_blank" class="eco-card eco-card-2">
+      <a href="#" class="eco-card eco-card-2">
         <span class="eco-label">Sustainable Design<br>Impact Hub™</span>
       </a>
-      <a href="mailto:team@kayliagroup.com" class="eco-card eco-card-3">
+      <a href="#" class="eco-card eco-card-3">
         <span class="eco-label">Kaylia Group<br>Consulting</span>
       </a>
-      <a href="https://www.csfdg.com" target="_blank" class="eco-card eco-card-4">
+      <a href="#" class="eco-card eco-card-4">
         <span class="eco-label">Council on Sustainable Fashion<br>and Design of Grenada</span>
       </a>
     </div>
@@ -258,8 +365,44 @@
   <section id="about">
     <div class="story-inner reveal">
       <h2>Our Story</h2>
-      <p>Kaylia Group is a comprehensive ecosystem; we consult with businesses in fashion, education, and hospitality to transition them to more environmentally and socially sustainable practices. From groundbreaking innovations in bio-based materials to strategic consultancy services, we're leading the charge toward a more regenerative future.</p>
+      <p>Kaylia Group is a comprehensive ecosystem; we consult with businesses in fashion, lifestyle, and travel to transition them to more environmentally and socially sustainable practices. From groundbreaking innovations in bio-based materials to strategic consultancy services, we're leading the charge toward a more regenerative future.</p>
       <a href="shannen/" class="btn-outline">Meet the Founder</a>
+    </div>
+  </section>
+
+
+  <!-- SUSTAINABLE PROPERTIES -->
+  <section id="properties">
+    <div class="properties-inner">
+      <div class="properties-visual reveal">
+        <span class="properties-visual-label">The Built Environment · Kaylia Group</span>
+      </div>
+      <div class="properties-content reveal">
+        <p class="properties-kicker">The Built Environment</p>
+        <h2 class="properties-title">Sustainable Properties<br>&amp; Real Estate</h2>
+        <p class="properties-copy">
+          Kaylia Group brings its sustainability lens beyond products and into the places we inhabit.
+          Our approach to property considers environmental performance, material choices, adaptive reuse,
+          local character, and long-term value from the earliest stages of a project. We are interested in
+          thoughtful residential, hospitality, and creative spaces where design quality and lower-impact
+          decisions can exist together.
+        </p>
+        <div class="properties-focus">
+          <div class="property-focus-row">
+            <span class="property-focus-num">01</span>
+            <span class="property-focus-text">Adaptive reuse &amp; thoughtful repositioning</span>
+          </div>
+          <div class="property-focus-row">
+            <span class="property-focus-num">02</span>
+            <span class="property-focus-text">Lower-impact materials, interiors &amp; building strategies</span>
+          </div>
+          <div class="property-focus-row">
+            <span class="property-focus-num">03</span>
+            <span class="property-focus-text">Residential, hospitality &amp; creative property concepts</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-outline">Discuss a Property Project</a>
+      </div>
     </div>
   </section>
 
@@ -272,7 +415,7 @@
       <span class="press-logo" style="font-size:16px;">✦ clam</span>
       <span class="press-logo" style="font-size:20px;">● tocco</span>
       <span class="press-logo" style="font-size:24px; font-weight:500; letter-spacing:0.1em; font-family:var(--font-body);">EBONY</span>
-      <img src="images/no-kill-magazine.png" alt="No Kill Magazine" style="height:32px;width:auto;opacity:0.6;filter:invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6" />
+      <span class="press-logo" style="font-size:13px; font-weight:500; border:1.5px solid currentColor; padding:5px 9px;">no kill<br><small style="font-size:9px; letter-spacing:0.1em;">MAGAZINE</small></span>
       <span class="press-logo" style="font-size:12px; text-align:center; line-height:1.5;">◆ SAMUEL<br>LAWRENCE<br>FOUNDATION</span>
     </div>
   </section>
@@ -282,7 +425,7 @@
     <div class="work-intro">
       <p class="section-label reveal">What We Do</p>
       <h2 class="section-heading reveal">Work With Us</h2>
-      <p class="section-subtext reveal">Whether you need strategic guidance on program development, a skilled speaker on sustainable futures, or a long-term ecosystem partner — we're here to build.</p>
+      <p class="section-subtext reveal">Whether you need strategic guidance, an event produced, a speaker on sustainable futures, or a long-term ecosystem partner — we're ready.</p>
     </div>
     <div class="services-grid">
       <div class="service-card reveal">
@@ -317,8 +460,8 @@
     <p class="affiliations-label reveal">Affiliations</p>
     <div class="affiliations-logos reveal">
       <!-- REPLACE EACH DIV WITH: <img src="images/affil-NAME.png" alt="NAME" class="affil-img" /> -->
-      <img src="images/bevisioneers.png" alt="beVisioneers Community" style="height:44px;width:auto;opacity:0.7;mix-blend-mode:screen;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.7" />
-      <img src="images/un-fashion-network.jpg" alt="UN Fashion &amp; Lifestyle Network" style="height:44px;width:auto;opacity:0.75;filter:brightness(0) invert(1);transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.75" />
+      <div class="affil-logo"><span class="affil-icon">◎</span>The Mercedes-Benz Fellowship<br><strong>beVisioneers community</strong></div>
+      <div class="affil-logo"><span class="affil-icon">✦</span>United Nations<br>Fashion &amp; Lifestyle Network</div>
       <div class="affil-logo"><span class="affil-icon">🕊</span>Halcyon</div>
       <div class="affil-logo"><span class="affil-icon">▲▽</span>International Society<br>for Industrial Ecology</div>
     </div>
@@ -346,8 +489,10 @@
         <select>
           <option value="">Select a service</option>
           <option>Consulting</option>
+          <option>Event Production</option>
           <option>Speaking Engagement</option>
           <option>Partnership</option>
+          <option>Sustainable Properties &amp; Real Estate</option>
           <option>Other</option>
         </select>
       </div>
@@ -365,7 +510,7 @@
   <footer>
     <div class="footer-brand">
       <p class="brand-name">The Kaylia Group</p>
-      <p>New York, NY 10001<br>team@kayliagroup.com<br>thekayliagroup.com</p>
+      <p>New York, NY 10001<br>info@kayliaofficial.com<br>thekayliagroup.com</p>
     </div>
     <div class="footer-nav">
       <h5>Navigation</h5>
@@ -373,6 +518,7 @@
         <li><a href="#group">Group</a></li>
         <li><a href="#about">Our Story</a></li>
         <li><a href="#work-with-us">Services</a></li>
+        <li><a href="#properties">Properties</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="shannen/">Meet the Founder</a></li>
       </ul>
